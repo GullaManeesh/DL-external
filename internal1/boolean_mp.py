@@ -6,16 +6,16 @@ def mp(x,threshold):
 
   return 1 if z>=threshold else 0
 
-input = np.array([[0,0],[0,1],[1,0],[1,1]])
+inputs = np.array([[0,0],[0,1],[1,0],[1,1]])
 
 
 #AND
 
-for x in input:
+for x in inputs:
   print(f"{x}:{mp(x,2)}")
 print()
 #OR
-for x in input:
+for x in inputs:
   print(f"{x}:{mp(x,1)}")
 
 
