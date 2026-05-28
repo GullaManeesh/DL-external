@@ -47,3 +47,30 @@ plt.show()
 
 plt.imshow(X_test[10])
 print(y_pred[10])
+
+
+
+############
+# 1. load image
+img = cv2.imread("/content/digit_9.png")
+
+# 2. grayscale
+img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# 3. invert (MNIST style)
+img = cv2.bitwise_not(img)
+
+# 4. resize to 28x28
+img = cv2.resize(img, (28, 28))
+
+# 5. normalize
+img = img / 255.0
+
+# 6. reshape for model
+img = img.reshape(1, 28, 28)
+
+plt.imshow(img[0])
+y_prob = model.predict(img)
+print(y_prob)
+argmax = y_prob.argmax()
+print(argmax)
